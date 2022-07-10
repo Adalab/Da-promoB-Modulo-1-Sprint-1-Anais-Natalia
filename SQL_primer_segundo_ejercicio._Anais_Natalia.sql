@@ -25,13 +25,36 @@ salario INT NULL,
 fecha_incorporacion DATE NOT NULL,
 PRIMARY KEY (id_empleado)
 );
-CREATE TABLE facturas(
-id_factura INT AUTO_INCREMENT NOT NULL,
-numero_factura VARCHAR (45) NOT NULL,
-fecha DATE NOT NULL,
-PRIMARY KEY id_factura
-FOREIGN KEY id_zapatillas
-);
+
+CREATE TABLE IF NOT EXISTS `facturas` (
+  `id_factura` INT NOT NULL AUTO_INCREMENT,
+  `id_zapatilla` INT NOT NULL,
+  `numero factura` INT NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  CONSTRAINT `fk_facturas`
+	FOREIGN KEY (`id_zapatilla`)
+    REFERENCES `facturas`  (id_factura) ON DELETE CASCADE ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `facturas` (
+  `id_factura` INT NOT NULL AUTO_INCREMENT,
+  `id_empleado` INT NOT NULL,
+  `numero factura` INT NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  CONSTRAINT `fk_facturas`
+	FOREIGN KEY (`id_empleado`)
+    REFERENCES `facturas`  (id_factura) ON DELETE CASCADE ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `facturas` (
+  `id_factura` INT NOT NULL AUTO_INCREMENT,
+  `id_cliente` INT NOT NULL,
+  `numero factura` INT NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  CONSTRAINT `fk_facturas`
+	FOREIGN KEY (`id_cliente`)
+    REFERENCES `facturas`  (id_factura) ON DELETE CASCADE ON UPDATE CASCADE)
+ENGINE = InnoDB;
 
 ALTER TABLE zapatillas
 ADD marca VARCHAR (45) NOT NULL,
@@ -46,8 +69,8 @@ DROP COLUMN pais;
 ALTER TABLE clientes
 MODIFY COLUMN codigo_postal INT (5) NOT NULL;
 
-ADD TABLE facturas
-
+ALTER TABLE facturas
+ADD COLUMN total FLOAT (45) NOT NULL;
 
 
 
