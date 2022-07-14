@@ -20,17 +20,22 @@ VALUES (123, '2001-11-12', 1, 2, 1, 54.98),
 (1234, '2005-05-23', 1, 1, 3, 89.91),
 (12345, '2015-09-18', 2, 3, 3, 76.23);
 
-INSERT INTO zapatillas (color
-VALUES 
 
-
+SET SQL_SAFE_UPDATES = 0; 
 UPDATE zapatillas
-SET color = amarillo
-WHERE id_zapatilla = 2
+SET color = "amarillo"
+WHERE color = "rosas";
 
 UPDATE empleados
-SET tienda = A Coruña
-WHERE id_empleado = 7
+SET tienda = "A Coruña"
+WHERE nombre = "Laura";
 
+SET SQL_SAFE_UPDATES = 0; 
+UPDATE clientes
+SET numero_telefono = "123456728"
+WHERE nombre = "Monica";
 
+UPDATE facturas
+SET total = 89.91
+WHERE id_cliente = 2;
 
