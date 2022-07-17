@@ -1,5 +1,7 @@
 USE northwind
 
+#ejercicio 1
+
 #ejercicio 7
 
 SELECT category_name AS "NombreDeCategoria"

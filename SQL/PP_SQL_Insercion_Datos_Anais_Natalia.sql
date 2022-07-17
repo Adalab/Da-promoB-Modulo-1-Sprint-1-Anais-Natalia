@@ -1,5 +1,7 @@
 USE Tienda_de_zapatillas;
 
+
+#1
 INSERT INTO zapatillas (modelo, color, marca, talla)
 VALUES ('XQYUN', 'negro', 'nike', 42),
 ('UOPMN', 'rosas', 'nike', 39),
@@ -20,7 +22,7 @@ VALUES (123, '2001-11-12', 1, 2, 1, 54.98),
 (1234, '2005-05-23', 1, 1, 3, 89.91),
 (12345, '2015-09-18', 2, 3, 3, 76.23);
 
-
+#2
 SET SQL_SAFE_UPDATES = 0; 
 UPDATE zapatillas
 SET color = "amarillo"

@@ -2,12 +2,16 @@ CREATE SCHEMA `Tienda_de_zapatillas`;
 
 USE Tienda_de_zapatillas;
 
+
+#1
 CREATE TABLE zapatillas(
 id_zapatilla INT AUTO_INCREMENT NOT NULL,
 modelo VARCHAR (45) NOT NULL,
 color VARCHAR (45) NOT NULL,
 PRIMARY KEY (id_zapatilla)
 );
+
+#2
  CREATE TABLE clientes(
  id_cliente INT AUTO_INCREMENT NOT NULL,
  nombre VARCHAR (45) NOT NULL,
@@ -20,6 +24,9 @@ PRIMARY KEY (id_zapatilla)
  codigo_postal VARCHAR (45) NOT NULL,
  PRIMARY KEY (id_cliente)
 );
+
+
+#3
 CREATE TABLE empleados(
 id_empleado INT AUTO_INCREMENT NOT NULL,
 nombre VARCHAR (45) NOT NULL,
@@ -29,6 +36,8 @@ fecha_incorporacion DATE NOT NULL,
 PRIMARY KEY (id_empleado)
 );
 
+
+#4
 CREATE TABLE IF NOT EXISTS facturas(
 id_factura INT AUTO_INCREMENT NOT NULL,
 numero_factura VARCHAR (45) NOT NULL,
@@ -47,12 +56,6 @@ CONSTRAINT fk_facturas
 	FOREIGN KEY (id_cliente)
     REFERENCES facturas  (id_factura));
     
-
-##NECESARIO?
-ON DELETE CASCADE ON UPDATE CASCADE)
-ENGINE = InnoDB
-
-
 
 
 
